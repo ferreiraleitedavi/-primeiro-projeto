@@ -1,75 +1,116 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> <!--A tag meta é uma tag de metadados, utf-8 é o padão universal de liguagem, que funciona para o portugues-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <link rel="stylesheet" href="styles.css">
-    <title><Davi | portifolio></title>
+    <title>Davi | portifolio</title>
 </head>
+
 <body>
-  <nav class="navegacao">
-    <ul class="menu">
-    <li>
-          <a href="#inicio">inicio</a>
+     <div class="particulas"></div> <!-- A tag div serve para criar um bloco-->
+
+       <nav class="navegacao">
+     <ul class="menu">
+     <li>
+          <a href="#inicio" class="menu-link ">inicio</a>
      </li>
      <li>
-          <a href="#sobre">sobre</a>
+          <a href="#sobre" class="menu-link ">sobre</a>
      </li>
      <li>
-          <a href="#projetos">projetos</a>
+          <a href="#projetos" class="menu-link ">projetos</a>
      </li>
      <li>
-          <a href="#conto">contato</a>
+          <a href="#contatos" class="menu-link ">contato</a>
     </li> 
-   </ul> 
+    </ul> 
    </nav> 
    
-    <main id="inicio" class="cabecalho"> 
-        <div>
+   <div id="inicio" class="cabecalho"> 
             <img src="img/Nova pasta/Davi.jpeg"alt="foto Davi ferreira" class="foto-perfil">
             <h1>Davi ferreira</h1>
-            <p>Desenvolvedor front end</p>
-        </div>
-
-  </main>
+            <p class="cabecalho-sob-titulo">Desenvolvedor front end</p>
+         </div>
+      </main>
        
-  <section id="sobre" class="sobre">
-       <h2 class="sobre-titulo">Sobre mim</h2>
+  <section= id="sobre" class="sobre">
+       <h2 class="sobre-titulo" style="text-align: center">Sobre mim</h2>
        <div class="sobre-caixa">
           <p class="sobre-paragrafo">
             olá sou um desenvolvedor de front-end apaixonado por criar  experiencias web únicas e memorável. combino códgos limpo com design moderno para desenvolver sites que não só funciona perfeitamente, mas tembém impressionam visualmente.
-       <p>
+          </p>
      </div> 
+   </section>
 
-    </select> 
-       <section id="projetos"  class="projetos" 
-         <h2 class="projetos-titulo">meus-projetos</h2> 
-        <div class="projetos-caixa">
 
-                 <div class="projetos-card">
-                    <img src="img/Nova pasta/projeto1.png" alt="projeto1" class="progetos-imagem">
+     <section id="projetos" class="projetos">
+         <h2 class="projetos-titulo" style="text-align: center">meus-projetos</h2>
+         <div class="projetos-caixa">
+               <div class="projetos-card">
+                    <img src="img/Nova pasta/projeto1.png" alt="projeto1" class="projetos-imagem">
+                    <div class="caixa-textos-projetos"> 
                     <h3 class="info-projetos">Loja de carro</h3>
-                    <p class="paragrafo-projetos">loja virtual moderna com animaçães suaves e design responsivo para uma loja de carros de luxo.</p>
-
-          <div class="projetos-card">
-                    <img src="img/Nova pasta/projeto2.png" alt="projeto1" class="progetos-imagem">
-                    <h3 class="info-projetos">pagina de viagens</h3>
-                    <p class="paragrafo-projetos">uma página interativa como roteiros de viagem mais cobicados do mundo.</p>
-
-          <div class="projetos-card">
-                    <img src="img/Nova pasta/projeto3.png" alt="projeto1" class="progetos-imagem">
-                    <h3 class="info-projetos">Microsoft</h3>
-                    <p class="paragrafo-projetos">pagina da Microsoft</p>
-                 </div>
-
-          </div>
-     </section> 
-
-     <section id="contatos" class="contatos"> 
-          <h2 class="contatos-titulo">contatos</h2> 
-          <form class="formulario-contato" id="formulario">
-               <div class"nome-form">
-                    <input placeholder="nome" class="compo-form">
+                    <p class="paragrafo-projetos">loja virtual moderna com animaçães suaves e design responsivo para uma loja de carros de luxo. </p>
+                    </div>
                </div>
+                <div class="projetos-card">
+                    <img src="img/Nova pasta/projeto2.png" alt="projeto1" class="projetos-imagem">
+                    <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">pagina de viagens</h3>
+                    <p class="paragrafo-projetos">uma página interativa como roteiros de viagem mais cobicados do mundo. </p>   
+                    </div>
+               </div>
+
+               <div class="projetos-card">
+                    <img src="img/Nova pasta/projeto3.png" alt="projeto1" class="projetos-imagem">
+                    <div class="caixa-textos-projetos">
+                    <h3 class="info-projetos">Microsoft</h3>
+                    <p class="paragrafo-projetos">pagina da Microsoft  criada para demonstrar as últimas inovações em 
+                      tecnologia.</p>  
+                    </div>
+               </div>
+          </div>
+     </section>
+         
+     <section id="contatos" class="contatos"> 
+          <h2 class="contatos-titulo">Entre em contato</h2> 
+          <form class="formulario-contato" id="formulario" onsubmit="enviarwhats(event)">
                <div class="grupo-form">
-               <textarea class="text-form" placeholder=" Digite sua Mensagem"></textarea>
+                 <input placeholder="nome" class="compo-form" id="nome">
+               </div>
+
+               <div class="grupo-form">
+                <textarea class="textarea-form" placeholder=" Didigite sua mensagem" rows="4" id="mensagem"></textarea>
+               </div>
+
+               <button type="submit" class="botao-form">Enviar whatsapp 
+           </button>   
+
+          </form>
+
+      </section>  
+
+ <script>
+       function enviarwhats(event) {
+          event.preventDefault();
+        
+
+
+
+
+       const nome = document.getElementById('nome').value;
+       const mensagem = document.getElementById('mensagem').value;
+       const telefone = 5561994032493;
+
+       const texto = `Olá, me chamo  ${nome } minha mensagem e : ${mensagem}`;
+       const msgformatada = encodeURIComponent(texto);
+
+       const url = `https://api.whatsapp.com/send?phone=${telefone}&text=${msgformatada}`;
+
+       window.open(url, '_blank');
+       } 
+  </script>
+</body>
+
+</html>
